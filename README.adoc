@@ -1,40 +1,39 @@
-= Reference-en
+= Reference-tw
 
-Reference-en is the repo for the Language Reference documentation of the Arduino syntax in **English**.  
-All the Reference terms files are in AsciiDoc format.
+Reference-tw 是一個以**繁體中文**存放Arduino語法的語言參考文件。
+所有的參考用詞皆是以AsciiDoc格式表達。
 
-Thank you for taking the time to contribute to Arduino content, this is really helpful to the whole Arduino Community. If you want to learn more on how to contribute to this project please check https://create.arduino.cc/projecthub/Arduino_Genuino/contribute-to-the-arduino-reference-af7c37[this step by step tutorial].
+感謝您貢獻時間修訂Arduino文件，這對Arduino社群有很大的幫助。如果您想進一步了解如何對這個專案做出貢獻，可以參考  https://create.arduino.cc/projecthub/Arduino_Genuino/contribute-to-the-arduino-reference-af7c37[this step by step tutorial]。
 
-== Content Creation and Editing
-If you want to contribute new content, create a new file (with any text or code editor) and save it as .adoc.  
-Do not use parenthesis or any special character in the file name.  
-In https://raw.githubusercontent.com/arduino/reference-en/master/AsciiDoc_sample/AsciiDoc_Dictionary/AsciiDoc_Template-Dictionary.adoc[`reference-en/AsciiDoc_sample/AsciiDoc_Dictionary`] you will find an overview on the AsciiDoc syntax. This includes Titles, Text, Links, Images, Tables, Code and various embeds (video, slideshow, audio and code). You can see it rendered https://www.arduino.cc/reference/en/asciidoc_sample/asciidoc_dictionary/asciidoc_template-dictionary/[here].
+== 新增內容與編輯
+如果您要新增一段內容，只要新增一個檔案(用任何文字或是程式編輯器)並儲存成副檔名為.adoc的文件即可。
+檔名內請不要包含括號或任何特殊字元。
+您可以在 https://raw.githubusercontent.com/arduino/reference-en/master/AsciiDoc_sample/AsciiDoc_Dictionary/AsciiDoc_Template-Dictionary.adoc[`reference-en/AsciiDoc_sample/AsciiDoc_Dictionary`]中找到AsciiDoc的語法。包含標題、文字、連結、圖像、表格、程式片段和多種內嵌(視頻、投影片、音軌與程式)的用法。 https://www.arduino.cc/reference/en/asciidoc_sample/asciidoc_dictionary/asciidoc_template-dictionary/[這裡]可以看到各種語法的應用範例。
 
-If you want to contribute to the Language Reference or edit existing content, you can find two templates in reference-en/AsciiDoc_sample/Reference_Terms:
+如果你想貢獻或編輯已存在的內，可以在reference-tw/AsciiDoc_sample/Reference_Terms裡找到兩個範本：
 
-* Use https://raw.githubusercontent.com/arduino/reference-en/master/AsciiDoc_sample/Reference_Terms/AsciiDoc_Template-Single_Entity.adoc[`AsciiDoc_Template-Single_Entity.adoc`] (rendered https://www.arduino.cc/reference/en/asciidoc_sample/reference_terms/asciidoc_template-single_entity/[here]) for terms such as link:http://arduino.cc/en/Reference/AnalogWrite[analogWrite].
-* Use https://raw.githubusercontent.com/arduino/reference-en/master/AsciiDoc_sample/Reference_Terms/AsciiDoc_Template-Parent_Of_Entities.adoc[`AsciiDoc_Template-Parent_Of_Entities.adoc`] (rendered https://www.arduino.cc/reference/en/asciidoc_sample/reference_terms/asciidoc_template-parent_of_entities/[here]) for groups of functions such as link:http://arduino.cc/en/Reference/Serial[Serial].
+* 如果內容類似 link:http://arduino.cc/en/Reference/AnalogWrite[analogWrite]，請使用 https://raw.githubusercontent.com/arduino/reference-en/master/AsciiDoc_sample/Reference_Terms/AsciiDoc_Template-Single_Entity.adoc[`AsciiDoc_Template-Single_Entity.adoc`] (https://www.arduino.cc/reference/en/asciidoc_sample/reference_terms/asciidoc_template-single_entity/[此頁]為實際文件頁面)做為範本。
+* 如果內容類似 link:http://arduino.cc/en/Reference/Serial[Serial]，請使用 https://raw.githubusercontent.com/arduino/reference-en/master/AsciiDoc_sample/Reference_Terms/AsciiDoc_Template-Parent_Of_Entities.adoc[`AsciiDoc_Template-Parent_Of_Entities.adoc`](https://www.arduino.cc/reference/en/asciidoc_sample/reference_terms/asciidoc_template-parent_of_entities/[此頁]為實際文件頁面)做為範本。
 
-Please note that every Reference file should include as least a Description, some Example Code, and links to other relevant infos (See Also section). 
+請注意每個文件檔都要包含至少一段敘述、一些範例程式以及相關資訊的連結(參閱)。
 
-If you need to add images to the Asciidoc please create a folder called attachments in the same directory as the Asciidoc file. Images can be saved in SVG and PNG format, max size 200KB.
+如果您要在Asciidoc中加入圖像，請在同一個目錄下新增一個名稱為attachments的資料夾。圖像支援的格式有SVG和PNG，檔案不得超過200KB。
 
-== Contribute Content on Github
-If you are not familiar with Git you can contribute content directly on Github via their online interface. We put together a short Tutorial to show you how, https://create.arduino.cc/projecthub/Arduino_Genuino/contribute-to-the-arduino-reference-af7c37[CHECK IT OUT!]
+== 貢獻內容到Github
+如果您對Git不熟悉，也可以直接透過GitHub的線上功能直接貢獻內容。以下有個簡短的導覽說明如果進行，  https://create.arduino.cc/projecthub/Arduino_Genuino/contribute-to-the-arduino-reference-af7c37[請看此!]
 
-link:https://help.github.com/articles/editing-files-in-another-user-s-repository/[You can also follow this guide] (written by the Github team) to learn how to edit an .adoc file and propose a file change to the Arduino team.  
-When suggesting a change, please follow the guidelines described in the Reference template files.
+link:https://help.github.com/articles/editing-files-in-another-user-s-repository/[你也可以參考這個網頁] (由GitHub團隊撰寫)學習如何編輯.adoc檔案，將檔案編修提供給Arduino團隊。
+提供建議的改動時，請遵循參考範本中說明的原則。
 
+== 提交一個pull請求
+我們非常高興您能貢獻內容到Arduino參考文件：這是幫助這個社群最棒的方式。
 
-== Submitting a pull request
-We are glad you want to contribute to the Arduino Reference: that's the best way to help the community.
+貢獻如果是新增/修改程式範例或是整個敘述時，請務必指明所連結的issue或是新增一個issue給這個編修內容。
 
-Your contribution is adding or modifying existing code or full descriptions, please always refer to an existing issue or open a new one before contributing. 
-
-=== Folder Structure
-[source]
+=== 資料夾結構
+[原始碼]
 ----
-reference-en
+reference-tw
 ├─ AsciiDoc_sample
 │   ├── AsciiDoc_Dictionary
 │   │   ├── AsciiDoc_Template-Dictionary.adoc
@@ -52,7 +51,7 @@ reference-en
 
 ----
 
-Within the Language folder, the file tree follows the same structure as in the link:https://www.arduino.cc/reference/en[Arduino Reference webpage]
+在Language資料夾中，檔案結構跟 link:https://www.arduino.cc/reference/en[Arduino Reference webpage] 一致。
 
 === License
 
