@@ -15,23 +15,23 @@ aliases: [ /language/functions/advanced-io/noTone/ ]
 --
 
 [float]
-=== Description
-Stops the generation of a square wave triggered by `tone()`. Has no effect if no tone is being generated.
+=== 說明
+停止由 `tone()` 產生的方波音源。如果當前沒有音源產生，則沒有任何影響。
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 語法
 `noTone(pin)`
 
 
 [float]
-=== Parameters
-`pin`: the pin on which to stop generating the tone
+=== 參數
+`pin`: 想要停止產生音源的接腳
 
 [float]
-=== Returns
-Nothing
+=== 回傳值
+無
 
 --
 // OVERVIEW SECTION ENDS
@@ -44,8 +44,8 @@ Nothing
 --
 
 [float]
-=== Notes and Warnings
-If you want to play different pitches on multiple pins, you need to call noTone() on one pin before calling `tone()` on the next pin.
+=== 密技與警告
+如果您想在不同的接腳播放不同的音調，您在呼叫對下一個接腳呼叫 `tone()` 之前，要對目前的接腳呼叫 `noTone()` 才會運作正常。
 [%hardbreaks]
 
 --
