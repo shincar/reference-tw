@@ -16,32 +16,31 @@ subCategories: [ "Advanced I/O" ]
 --
 
 [float]
-=== Description
-Shifts in a byte of data one bit at a time. Starts from either the most (i.e. the leftmost) or least (rightmost) significant bit. For each bit, the clock pin is pulled high, the next bit is read from the data line, and then the clock pin is taken low.
+=== 說明
+在一個byte資料中以一次位移一個bit的方式填入資料。位移可以從最高有效位(如：最左)或是最小有效位(如：最右)。每一個bit，時脈腳位電位被拉高，從資料串上讀取下一個bit的值，再把時脈腳位電拉拉低。
 
-If you're interfacing with a device that's clocked by rising edges, you'll need to make sure that the clock pin is low before the first call to `shiftIn()`, e.g. with a call to `digitalWrite(clockPin, LOW)`.
+如果您正在介接的裝置時脈觸發是要上升邊緣為準的話，第一次呼叫 `shiftIn()` 之前您必須要在時脈腳位電位是在低電位。如：先呼叫 `digitalWrite(clockPin, LOW)`。
 
-Note: this is a software implementation; Arduino also provides an link:https://www.arduino.cc/en/Reference/SPI[SPI library] that uses the hardware implementation, which is faster but only works on specific pins.
+註記：這是以軟體的方式實作。Arduino也有提供 link:https://www.arduino.cc/en/Reference/SPI[SPI library] 是以硬體的方式實作，硬體的方式運作較快速，但是只要在某些腳位上才能正常使用。
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 語法
 `byte incoming = shiftIn(dataPin, clockPin, bitOrder)`
 
 
 [float]
-=== Parameters
-`dataPin`: the pin on which to input each bit (int)
+=== 參數
+`dataPin`: 欲填入一次填入一個bit資料的腳位 (int)
 
-`clockPin`: the pin to toggle to signal a read from *dataPin*
+`clockPin`: 能切換用以觸發讀取 *dataPin* 的腳位。
 
-`bitOrder`: which order to shift in the bits; either *MSBFIRST* or *LSBFIRST*.
-(Most Significant Bit First, or, Least Significant Bit First)
+`bitOrder`: 要以哪個方向填入資料。可能的值為 *MSBFIRST* 或是 *LSBFIRST* 。(最高有效位優先或是最小有效位優先)
 
 [float]
-=== Returns
-the value read (byte)
+=== 回傳值
+讀取值 (byte)
 
 --
 // OVERVIEW SECTION ENDS
