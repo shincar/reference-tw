@@ -16,31 +16,31 @@ subCategories: [ "Advanced I/O" ]
 --
 
 [float]
-=== Description
-`pulseInLong()` is an alternative to link:../pulsein[pulseIn()] which is better at handling long pulse and interrupt affected scenarios.
+=== 說明
+`pulseInLong()` 為 link:../pulsein[pulseIn()]的替代方案，能夠更好的處理長時間的脈衝並中斷要影響的情境。
 
-Reads a pulse (either `HIGH` or `LOW`) on a pin. For example, if `value` is `HIGH`, `pulseInLong()` waits for the pin to go from `LOW` to `HIGH`, starts timing, then waits for the pin to go `LOW` and stops timing. Returns the length of the pulse in microseconds or gives up and returns 0 if no complete pulse was received within the timeout.
+讀取一個接腳的脈衝(可能是 HIGH 或是 LOW)。例如： `value` 傳入為 `HIGH` , 則 `pulseIn()` 會等待接腳從 `LOW` 轉為 `HIGH`，開始計時。接著等待接腳轉為 LOW，結束計時。回傳值為脈衝所經過的時間(單位為微秒)或是 0 代表在 `timeout` 時間內沒有脈衝完成。
 
-The timing of this function has been determined empirically and will probably show errors in shorter pulses. Works on pulses from 10 microseconds to 3 minutes in length. This routine can be used only if interrupts are activated. Furthermore the highest resolution is obtained with large intervals.
+此方法中的計時機制在較長的脈衝時可能會計算錯誤。在10微秒到3分鐘之間能正確運作。這個程序只有在中斷有被啟用的時候才能使用。另外，設定的時間區間大的時候，精確度越高。
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 語法
 `pulseInLong(pin, value)`
 
 `pulseInLong(pin, value, timeout)`
 
 [float]
-=== Parameters
-`pin`: the number of the pin on which you want to read the pulse. (int)
+=== 參數
+`pin`: 想要讀取脈衝的接腳號碼。(int)
 
-`value`: type of pulse to read: either link:../../../variables/constants/constants/[HIGH] or link:../../../variables/constants/constants/[LOW]. (int)
+`value`: 欲讀取的脈衝的類別：可能的值為 link:../../../variables/constants/constants/[HIGH] 或是 link:../../../variables/constants/constants/[LOW] 。 (int)
 
-`timeout` (optional): the number of microseconds to wait for the pulse to start; default is one second (unsigned long)
+`timeout` (optional): 等待脈衝開始的時間(單位微秒)，預設值為1秒。 (unsigned long)
 [float]
-=== Returns
-the length of the pulse (in microseconds) or 0 if no pulse started before the timeout (unsigned long)
+=== 回傳值
+脈衝的長度(單位微秒)或是0代表 `timeout` 時間內沒有脈衝開始的訊號發生。(unsigned long)
 
 --
 // OVERVIEW SECTION ENDS
@@ -53,9 +53,9 @@ the length of the pulse (in microseconds) or 0 if no pulse started before the ti
 --
 
 [float]
-=== Example Code
+=== 範例程式
 // Describe what the example code is all about and add relevant code   ►►►►► THIS SECTION IS MANDATORY ◄◄◄◄◄
-The example calculated the time duration of a pulse on pin 7.
+此範例計算接腳7發生脈衝的時間。
 
 [source,arduino]
 ----
@@ -73,8 +73,8 @@ void loop() {
 [%hardbreaks]
 
 [float]
-=== Notes and Warnings
-This function relies on micros() so cannot be used in link:../../interrupts/nointerrupts[noInterrupts()] context.
+=== 密技與警告
+這個方法依靠 micros() ，所以在有用到 link:../../interrupts/nointerrupts[noInterrupts()] 的context中不能使用。
 
 --
 // HOW TO USE SECTION ENDS
