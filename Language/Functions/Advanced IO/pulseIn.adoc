@@ -33,7 +33,7 @@ subCategories: [ "Advanced I/O" ]
 === 參數
 `pin`: 想要讀取脈衝的接腳號碼。 (int)
 
-`value`: 欲讀取的脈衝的類別：可能的值 link:../../../variables/constants/constants/[HIGH] or link:../../../variables/constants/constants/[LOW]. (int)
+`value`: 欲讀取的脈衝的類別：可能的值為 link:../../../variables/constants/constants/[HIGH] or link:../../../variables/constants/constants/[LOW]. (int)
 
 `timeout` (optional): 等待脈衝開始的時間(單位微秒)，預設值為1秒。(unsigned long)
 [float]
