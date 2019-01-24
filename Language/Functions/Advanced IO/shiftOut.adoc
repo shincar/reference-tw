@@ -12,34 +12,33 @@ subCategories: [ "Advanced I/O" ]
 --
 
 [float]
-=== Description
-Shifts out a byte of data one bit at a time. Starts from either the most (i.e. the leftmost) or least (rightmost) significant bit. Each bit is written in turn to a data pin, after which a clock pin is pulsed (taken high, then low) to indicate that the bit is available.
+=== 說明
+在一個byte中一次位移一個bit的方移出資料。位移可以從最高有效位(如：最左)或是最小有效位(如：最右)。每一個bit時脈腳位電位有脈衝的寫入下一個bit的值，以此指示這個bit可以被運用。
 
-Note- if you're interfacing with a device that's clocked by rising edges, you'll need to make sure that the clock pin is low before the call to `shiftOut()`, e.g. with a call to `digitalWrite(clockPin, LOW)`.
+如果您正在介接的裝置時脈觸發是要上升邊緣為準的話，第一次呼叫 `shiftOut()` 之前您必須要在時脈腳位電位是在低電位。如：先呼叫 `digitalWrite(clockPin, LOW)`。
 
-This is a software implementation; see also the https://www.arduino.cc/en/Reference/SPI[SPI library], which provides a hardware implementation that is faster but works only on specific pins.
+註記：這是以軟體的方式實作。Arduino也有提供 link:https://www.arduino.cc/en/Reference/SPI[SPI library] 是以硬體的方式實作，硬體的方式運作較快速，但是只要在某些腳位上才能正常使用。
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 語法
 `shiftOut(dataPin, clockPin, bitOrder, value)`
 
 
 [float]
-=== Parameters
-`dataPin`: the pin on which to output each bit (int)
+=== 參數
+`dataPin`: 欲一次位移讀出一個bit資料的腳位 (int)
 
-`clockPin`: the pin to toggle once the dataPin has been set to the correct value (int)
+`clockPin`: 能觸發告知 `dataPin` 值已正確寫入的腳位 (int)
 
-`bitOrder`: which order to shift out the bits; either MSBFIRST or LSBFIRST.
-(Most Significant Bit First, or, Least Significant Bit First)
+`bitOrder`: 要以哪個方向填入資料。可能的值為 *MSBFIRST* 或是 *LSBFIRST* 。(最高有效位優先或是最小有效位優先)
 
-`value`: the data to shift out. (byte)
+`value`: 移出的值 (byte)
 
 [float]
-=== Returns
-Nothing
+=== 回傳值
+無
 
 --
 // OVERVIEW SECTION ENDS
@@ -97,10 +96,10 @@ void loop() {
 [%hardbreaks]
 
 [float]
-=== Notes and Warnings
-The dataPin and clockPin must already be configured as outputs by a call to link:../../digital-io/pinmode[pinMode()].
+=== 密技與警告
+dataPin和clockPin在呼叫之前就必須被設成輸出模式  link:../../digital-io/pinmode[pinMode()]
 
-shiftOut is currently written to output 1 byte (8 bits) so it requires a two step operation to output values larger than 255.
+shiftOut 目前一次只輸出1byte(8 bits)，所以如果要輸出255以上的值，需要兩步驟才能完成。
 [source,arduino]
 ----
 // Do this for MSBFIRST serial
