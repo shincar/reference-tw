@@ -17,7 +17,7 @@ subCategories: [ "Advanced I/O" ]
 
 [float]
 === 說明
-在一個byte資料中以一次位移一個bit的方式填入資料。位移可以從最高有效位(如：最左)或是最小有效位(如：最右)。每一個bit，時脈腳位電位被拉高，從資料串上讀取下一個bit的值，再把時脈腳位電拉拉低。
+在一個byte資料中以一次位移一個bit的方式填入資料。位移可以從最高有效位(如：最左)或是最小有效位(如：最右)。每一個bit時脈腳位電位被拉高，從資料串上讀取下一個bit的值，再把時脈腳位電拉拉低。
 
 如果您正在介接的裝置時脈觸發是要上升邊緣為準的話，第一次呼叫 `shiftIn()` 之前您必須要在時脈腳位電位是在低電位。如：先呼叫 `digitalWrite(clockPin, LOW)`。
 
@@ -32,7 +32,7 @@ subCategories: [ "Advanced I/O" ]
 
 [float]
 === 參數
-`dataPin`: 欲填入一次填入一個bit資料的腳位 (int)
+`dataPin`: 欲一次位移一個bit資料的腳位 (int)
 
 `clockPin`: 能切換用以觸發讀取 *dataPin* 的腳位。
 
