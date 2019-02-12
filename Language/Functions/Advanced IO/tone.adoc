@@ -16,36 +16,36 @@ subCategories: [ "Advanced I/O" ]
 --
 
 [float]
-=== Description
-Generates a square wave of the specified frequency (and 50% duty cycle) on a pin. A duration can be specified, otherwise the wave continues until a call to link:../noTone[noTone()]. The pin can be connected to a piezo buzzer or other speaker to play tones.
+=== 說明
+在一個腳位上產生特定頻率的方波(占空比為50%)。可以指定一個時間長度，或是直到呼叫  link:../noTone[noTone()]為止。腳位可以連接到蜂鳴器或是喇叭來播放音調。
 
-Only one tone can be generated at a time. If a tone is already playing on a different pin, the call to tone() will have no effect. If the tone is playing on the same pin, the call will set its frequency.
+同一個時間只能產生一個音頻。若一個音頻正在別的腳位上播放，則呼叫tone()不會有其他作用。若是在同一個腳位上播放，則會再次設定頻率。
 
-Use of the `tone()` function will interfere with PWM output on pins 3 and 11 (on boards other than the Mega).
+呼叫 `tone()` 方法時，也會介接腳位3與腳位11上的脈寬調變(PWM)輸出。
 
-It is not possible to generate tones lower than 31Hz. For technical details, see https://github.com/bhagman/Tone#ugly-details[Brett Hagman's notes].
+目前最低音頻為31Hz。如果想了解技術上的原因，可以參考 https://github.com/bhagman/Tone#ugly-details[Brett Hagman's notes]。
 [%hardbreaks]
 
 
 [float]
-=== Syntax
+=== 語法
 `tone(pin, frequency)`
 
 `tone(pin, frequency, duration)`
 [%hardbreaks]
 
 [float]
-=== Parameters
-`pin`: the pin on which to generate the tone
+=== 參數
+`pin`: 欲產生音調的腳位。
 
-`frequency`: the frequency of the tone in hertz - `unsigned int`
+`frequency`: 音調的頻率，單位為赫茲(Hertz)- `unsigned int`
 
-`duration`: the duration of the tone in milliseconds (optional) - `unsigned long`
+`duration`: 播放音調的長度，單位為毫秒 (選擇性參數) - `unsigned long`
 [%hardbreaks]
 
 [float]
-=== Returns
-Nothing
+=== 回傳值
+無
 
 --
 // OVERVIEW SECTION ENDS
@@ -58,8 +58,8 @@ Nothing
 --
 
 [float]
-=== Notes and Warnings
-If you want to play different pitches on multiple pins, you need to call `noTone()` on one pin before calling `tone()` on the next pin.
+=== 密技與警告
+若你想在不同的腳位播放不同的音頻，必須先呼叫 `noTone()` 於當前腳位，再呼叫 `tone()` 於下一個腳位。
 [%hardbreaks]
 
 --
